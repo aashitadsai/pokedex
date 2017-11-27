@@ -1,0 +1,41 @@
+.card {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1em 2.5em;
+    padding: 1.5em 1.5em 2em;
+    background: #24252A;
+    height: 150px;
+    width: 98px;
+    box-shadow: 0px 0px 3px 0px rgb(75, 75, 75);
+    }
+    
+    .pokemage {
+        width: 98px;
+    }
+    
+    .pokename {
+        position: absolute;
+        bottom: 10px;
+        right: 0px;
+        left: 0px;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .front{
+        display: block;
+    }
+
+    .back {
+        display: none;
+    }
+
+    .card:hover {
+        .front {
+            display: none;
+        }
+        .back {
+            display: block;
+        }
+    }

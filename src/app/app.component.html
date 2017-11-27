@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1 class="page_heading">Pokedéx</h1>
+<app-progress *ngIf="loading || progress"></app-progress>
+<div *ngIf="!loading" class="wrapper" [ngClass]="modal_theme=='fadeInLeft'?'pushed_right':' '">
+  <app-poke-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon" (click)="cardClick(pokemon)"></app-poke-card>
+</div>
+
+
+
+<!-- poke_details_modal -->
+<div class="poke_modal animated" [ngClass]="modal_theme" [style.display]="modal_show">
+  <div class="close" (click)="modal_close()"><img src="../assets/close.png"></div>
+	    <div class="modal-body">
+                <img src={{poke_modal.front_default}} class="pokemage front">
+                <span class="pokename_modal">{{poke_modal.name}}</span>
+                <span>Pokemon XP</span><span class="modal_prop">{{poke_modal.base_experience}}</span><br/>
+                <span>Pokemon Height</span><span class="modal_prop">{{poke_modal.height}}</span><br/>
+                <span>Pokemon Weight</span><span class="modal_prop">{{poke_modal.weight}}</span>
+                <p class="modal_header_text">Abilities</p>
+                <div *ngFor="let ability of poke_modal.abilities">
+                  <p>{{ability.name}}:&nbsp;{{ability.description}}</p>
+                </div>
+    		</div>
+</div>
+
+<div class="button_div" *ngIf="!loading">
+  <button [disabled]="poke_api_service.count!=0?'true':'false'" class="button" (click)="previous()">Previous</button>
+  <button class="button" (click)="next()">Next</button>
+</div>
+
+
+
+<router-outlet></router-outlet>

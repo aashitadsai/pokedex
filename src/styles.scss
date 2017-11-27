@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Changa');
+
+$white_color: #CECECE;
+
+html{
+    overflow-x: hidden;
+}
+
+.wrapper{
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
+}
+
+.pushed_right{
+    transform: -webkit-translate3d(330px,0,0);
+    transform: translate3d(330px,0,0);
+}
+
+body {
+    color: $white_color;
+    background: #2A2B30;
+}
+
+*{
+    font-family: 'Changa', sans-serif;
+}
+
