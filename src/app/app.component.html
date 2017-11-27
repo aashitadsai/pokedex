@@ -24,7 +24,7 @@
 </div>
 
 <div class="button_div" *ngIf="!loading">
-  <button [disabled]="poke_api_service.count==0?'true':'false'" class="button" (click)="previous()">Previous</button>
+  <button class="button" (click)="previous()">Previous</button>
   <button class="button" (click)="next()">Next</button>
 </div>
 
